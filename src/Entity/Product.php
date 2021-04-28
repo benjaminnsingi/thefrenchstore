@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
  */
@@ -30,17 +31,7 @@ class Product
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private ?string $illustration = null;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private ?string $subtitle = null;
-
-    /**
-     * @ORM\Column(type="text", length=255)
-     */
-    private ?string $description = null;
 
     /**
      * @ORM\Column(type="float")
@@ -51,7 +42,22 @@ class Product
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
      * @ORM\JoinColumn(nullable=false)
      */
-    private ?Category $category;
+    private ?Category $category = null;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private ?string $image = null;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private ?bool $isBest = null;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private ?string $description = null;
 
     public function getId(): ?int
     {
@@ -82,18 +88,6 @@ class Product
         return $this;
     }
 
-    public function getIllustration(): ?string
-    {
-        return $this->illustration;
-    }
-
-    public function setIllustration(string $illustration): self
-    {
-        $this->illustration = $illustration;
-
-        return $this;
-    }
-
     public function getSubtitle(): ?string
     {
         return $this->subtitle;
@@ -102,18 +96,6 @@ class Product
     public function setSubtitle(string $subtitle): self
     {
         $this->subtitle = $subtitle;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
 
         return $this;
     }
@@ -138,6 +120,48 @@ class Product
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string|null $image
+     * @return $this
+     */
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+        return $this;
+    }
+
+    public function getIsBest(): ?bool
+    {
+        return $this->isBest;
+    }
+
+    public function setIsBest(bool $isBest): self
+    {
+        $this->isBest = $isBest;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
