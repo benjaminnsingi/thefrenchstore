@@ -42,3 +42,24 @@ body {
 .product-page-price {
     font-size: 16px;
 }
+
+.block-small {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-check {
+    background-color: #f4f8ff;
+    padding: 28px 65px;
+    margin-top: 7px;
+}
+
+.col-form-label {
+    font-weight: bold;
+}
+
+.order-summary {
+    background-color: #f4f8ff;
+    padding: 20px;
+    margin-top: 20px;
+}
