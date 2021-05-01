@@ -48,6 +48,11 @@ class OrderDetails
         return $this->id;
     }
 
+    public function __toString()
+    {
+        return $this->getPrice();
+    }
+
     public function getMyorder(): ?Order
     {
         return $this->myorder;

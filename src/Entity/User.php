@@ -54,7 +54,7 @@ class User implements UserInterface
     /**
      * @ORM\OneToMany(targetEntity=Order::class, mappedBy="user")
      */
-    private $orders;
+    private Collection $orders;
 
     public function __construct()
     {
@@ -141,6 +141,11 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getFullName(): string
+    {
+        return $this->getFirstname(). ' '. $this->getLastname();
     }
 
     public function getFirstname(): ?string
