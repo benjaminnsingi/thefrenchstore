@@ -40,7 +40,7 @@ class Cart
 
     public function remove()
     {
-        return $this->session->get('cart');
+        return $this->session->remove('cart');
     }
 
     public function delete($id)

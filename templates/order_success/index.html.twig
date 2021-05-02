@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="">
+<div>
    <h2>Confirmation de commande</h2>
    <p>
        Bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,<br/><br/>
@@ -13,7 +13,7 @@
        <hr/>
        Votre commande sera livrée par <strong>{{ order.carrierName }}</strong> à l'adresse suivante : <br/>
        {{ order.delivery|raw }}
-       Pour suivre votre commande, rendez-vous dans votre <a href="{{ path('account') }}">compte</a>
+       Pour suivre votre commande, rendez-vous dans votre <a href="{{ path('account_order') }}">compte</a>
    </p>
 </div>
 {% endblock %}
