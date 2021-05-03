@@ -28,7 +28,7 @@ class StripeController extends AbstractController
         }
 
         // Initialize stripe
-        Stripe::setApiKey('sk_test_51ImKAzL6YR4P9Qcu9xYvCJqtg8Y4AjtgIHqL117Mw5VbQZp4let6ZiTInnC3NruA5HYIRcEm9yAIpOTHlFfiIVZZ00j3hiuwNG');
+        Stripe::setApiKey('');
 
         foreach ($order->getOrderDetails()->getValues() as $product) {
            $product_object = $entityManager->getRepository(Product::class)->findOneByName($product->getProduct());

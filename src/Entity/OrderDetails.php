@@ -50,7 +50,7 @@ class OrderDetails
 
     public function __toString()
     {
-        return $this->getPrice();
+        return $this->getProduct();
     }
 
     public function getMyorder(): ?Order
