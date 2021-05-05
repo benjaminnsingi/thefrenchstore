@@ -50,7 +50,7 @@ class Product
     private ?string $image = null;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="boolean")
      */
     private ?bool $isBest = null;
 

@@ -20,7 +20,7 @@ class Mail
             'Messages' => [
                 [
                     'From' => [
-                        'Email' => "demo@gmail.com",
+                        'Email' => "",
                         'Name' => "La Boutique Française"
                     ],
                     'To' => [

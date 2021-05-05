@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter - La Boutique Française {% endblock %}
+
+{% block content %}
+<div class="row">
+    <h2>Nous contacter</h2>
+    <p>N'hésitez pas à prendre contact avec notre équipe, nous vous répondrons dans les meilleurs délais.</p>
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-info">{{ message }}</div>
+    {% endfor %}
+   <div class="col-md-8">{{ form(form) }}</div>
+    <div class="col-md-4">
+        <strong>La Boutique Française</strong>
+        <hr>
+        07 00 00 00 00<br/>
+        8 rue des fleuris, 75000 Paris.<br/>
+        contact@laboutiquefrançaise.fr<br/>
+    </div>
+</div>
+{% endblock %}

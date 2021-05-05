@@ -28,9 +28,6 @@ class ProductCrudController extends AbstractCrudController
        return [
           TextField::new('name'),
           SlugField::new('slug')->setTargetFieldName('name'),
-          /*Field::new('imageFile')
-              ->setFormType(VichImageType::class)
-              ->setLabel('Image')*/
           ImageField::new('image')
               ->setBasePath('uploads/')
               ->setUploadDir('public/uploads')
